@@ -9,6 +9,7 @@ import AdminDashboard from '../pages/AdminDashboard';
 import AddRestaurant from '../pages/AddRestaurant';
 import AddMenu from '../pages/AddMenu';
 import AdminOrders from '../pages/AdminOrders';
+import AdminRestaurantDetails from '../pages/AdminRestaurantDetails';
 import DeliveryDashboard from '../pages/DeliveryDashboard';
 import ProtectedRoute from './ProtectedRoute';
 
@@ -21,13 +22,13 @@ const AppRoutes = () => (
     <Route path="/restaurant/:id" element={<RestaurantMenu />} />
 
     {/* Protected Customer Routes (User must be logged in to checkout) */}
-    <Route 
-      path="/cart" 
-      element={<ProtectedRoute><Cart /></ProtectedRoute>} 
+    <Route
+      path="/cart"
+      element={<ProtectedRoute><Cart /></ProtectedRoute>}
     />
-    <Route 
-      path="/order/:id" 
-      element={<ProtectedRoute><OrderTracking /></ProtectedRoute>} 
+    <Route
+      path="/order/:id"
+      element={<ProtectedRoute><OrderTracking /></ProtectedRoute>}
     />
 
     {/* Delivery Routes */}
@@ -49,17 +50,21 @@ const AppRoutes = () => (
         </ProtectedRoute>
       }
     />
-    <Route 
-      path="/admin/orders" 
-      element={<ProtectedRoute role="ADMIN"><AdminOrders /></ProtectedRoute>} 
+    <Route
+      path="/admin/orders"
+      element={<ProtectedRoute role="ADMIN"><AdminOrders /></ProtectedRoute>}
     />
-    <Route 
-      path="/admin/add-restaurant" 
-      element={<ProtectedRoute role="ADMIN"><AddRestaurant /></ProtectedRoute>} 
+    <Route
+      path="/admin/add-restaurant"
+      element={<ProtectedRoute role="ADMIN"><AddRestaurant /></ProtectedRoute>}
     />
-    <Route 
-      path="/admin/add-menu" 
-      element={<ProtectedRoute role="ADMIN"><AddMenu /></ProtectedRoute>} 
+    <Route
+      path="/admin/add-menu"
+      element={<ProtectedRoute role="ADMIN"><AddMenu /></ProtectedRoute>}
+    />
+    <Route
+      path="/admin/restaurant/:id"
+      element={<ProtectedRoute role="ADMIN"><AdminRestaurantDetails /></ProtectedRoute>}
     />
   </Routes>
 );

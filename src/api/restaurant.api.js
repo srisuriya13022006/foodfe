@@ -13,3 +13,6 @@ export const addRestaurant = (data) =>
 
 export const addMenuItem = (data) =>
   api.post(`${BASE}/menu`, data);
+// Add this to your restaurant.api.js
+export const getMyRestaurants = () =>
+  api.get(`${BASE}/my-restaurants`).then(res => res.data);

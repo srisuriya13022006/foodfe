@@ -1,12 +1,16 @@
 import AppRoutes from './routes/AppRoutes';
 import Navbar from './components/Navbar';
+import { AuthProvider } from './context/AuthContext';
+import { CartProvider } from './context/CartContext';
 
 const App = () => {
   return (
-    <>
-      <Navbar />
-      <AppRoutes />
-    </>
+    <AuthProvider>
+      <CartProvider>
+        <Navbar />
+        <AppRoutes />
+      </CartProvider>
+    </AuthProvider>
   );
 };
 
